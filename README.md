@@ -10,6 +10,12 @@ Aplikasi web untuk melakukan tes psikologi DISC berbasis web, yang digunakan unt
 
 Project ini dirancang untuk kebutuhan pengujian kepribadian dengan pendekatan digital yang lebih cepat, terstruktur, dan mudah dikelola.
 
+## Preview Project
+
+<p align="center">
+  <img src="public/logo.png" alt="Project preview" width="320" />
+</p>
+
 ## Fitur Utama
 
 - Form biodata peserta sebelum mengikuti tes
