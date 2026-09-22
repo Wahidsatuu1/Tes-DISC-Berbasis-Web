@@ -1,58 +1,212 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Tes DISC Berbasis Web
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Dompdf](https://img.shields.io/badge/dompdf-FFB000?style=for-the-badge&logo=pdf&logoColor=white)
 
-## About Laravel
+Aplikasi web untuk melakukan tes psikologi DISC berbasis web, yang digunakan untuk mengumpulkan data biodata peserta, menjalankan serangkaian pertanyaan DISC, menghitung dominan kepribadian, dan mengekspor hasilnya ke file PDF.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Project ini dirancang untuk kebutuhan pengujian kepribadian dengan pendekatan digital yang lebih cepat, terstruktur, dan mudah dikelola.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Form biodata peserta sebelum mengikuti tes
+- Pengumpulan jawaban DISC dengan skema “most” dan “least”
+- Perhitungan skor dan penentuan profil dominan berdasarkan tipe D, I, S, dan C
+- Dashboard untuk melihat hasil tes dan statistik keseluruhan
+- Pencarian data peserta pada dashboard
+- Export hasil tes ke PDF
+- Dukungan multi-bahasa sederhana (Indonesia dan Inggris)
+- Antarmuka yang responsif dan mudah digunakan
 
-## Learning Laravel
+## Teknologi yang Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Laravel 13
+- PHP 8.3+
+- MySQL
+- Bootstrap 5
+- Dompdf
+- Blade Template Engine
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Cara Kerja Aplikasi
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### 1. Halaman Landing Page
+Pengguna membuka halaman utama untuk memulai tes. Dari sini, mereka bisa masuk ke halaman ujian DISC.
 
-## Agentic Development
+### 2. Pengisian Biodata
+Sebelum mengerjakan tes, peserta mengisi data identitas dan informasi pendukung seperti:
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- nama lengkap
+- nomor identitas
+- tanggal lahir
+- jenis kelamin
+- fakultas / universitas
+- alamat
+- kontak
+- data orang tua / pembimbing
 
-```bash
-composer require laravel/boost --dev
+### 3. Proses Tes DISC
+Peserta menjawab pertanyaan DISC dengan dua pilihan dalam tiap item:
 
-php artisan boost:install
+- pilih jawaban yang paling menggambarkan diri
+- pilih jawaban yang paling tidak menggambarkan diri
+
+Sistem akan menghitung skor untuk masing-masing tipe:
+
+- D = Dominance
+- I = Influence
+- S = Steadiness
+- C = Conscientiousness
+
+### 4. Penentuan Profil Dominan
+Setelah semua jawaban dikumpulkan, sistem menghitung nilai perubahan (change score) dari tiap tipe. Hasil tersebut digunakan untuk menentukan profil personality dominan peserta.
+
+### 5. Dashboard dan Hasil
+Aplikasi menyimpan data hasil tes pada dashboard, yang dapat digunakan untuk melihat:
+
+- daftar hasil tes
+- statistik dominan kepribadian
+- pencarian dan filter data peserta
+
+### 6. Export PDF
+Setiap hasil tes dapat diekspor dalam format PDF agar mudah dibagikan atau dicetak.
+
+## Struktur Project
+
+```text
+Tes-DISC-Berbasis-Web/
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+├── lang/
+├── public/
+├── resources/
+├── routes/
+├── storage/
+├── tests/
+├── .env.example
+├── .gitignore
+├── artisan
+├── composer.json
+├── package.json
+├── phpunit.xml
+├── README.md
+├── vite.config.js
+└── ...
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## Persyaratan Sistem
 
-## Contributing
+Pastikan komputer Anda sudah memiliki:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- PHP 8.3 atau lebih tinggi
+- Composer
+- MySQL / MariaDB
+- Node.js dan NPM
+- Web server seperti Apache atau Laravel Sail
 
-## Code of Conduct
+## Instalasi
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. Clone repository:
 
-## Security Vulnerabilities
+```bash
+git clone https://github.com/Wahidsatuu1/Tes-DISC-Berbasis-Web.git
+cd Tes-DISC-Berbasis-Web
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2. Install dependency PHP:
 
-## License
+```bash
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. Install dependency frontend:
+
+```bash
+npm install
+```
+
+4. Salin file environment:
+
+```bash
+cp .env.example .env
+```
+
+5. Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+6. Konfigurasi database di file `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tes_disc
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+7. Jalankan migrasi database:
+
+```bash
+php artisan migrate
+```
+
+8. Jalankan aplikasi:
+
+```bash
+php artisan serve
+```
+
+Lalu buka:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Menjalankan Frontend Asset
+
+Untuk mode development frontend:
+
+```bash
+npm run dev
+```
+
+Untuk build production:
+
+```bash
+npm run build
+```
+
+## Penggunaan Aplikasi
+
+1. Buka halaman utama web
+2. Klik tombol untuk memulai tes DISC
+3. Isi biodata peserta
+4. Jawab semua pertanyaan DISC
+5. Lihat hasil tes pada dashboard
+6. Export hasil ke PDF jika diperlukan
+
+## Kontribusi
+
+Kontribusi sangat terbuka untuk pengembangan lebih lanjut, seperti:
+
+- validasi form yang lebih kuat
+- penambahan fitur login admin
+- export hasil ke Excel
+- visualisasi hasil ke grafik
+- keamanan dan autentikasi yang lebih baik
+
+## Lisensi
+
+Project ini dibuat untuk kebutuhan pembelajaran dan pengembangan aplikasi berbasis web. Silakan gunakan dengan bijak sesuai kebutuhan proyek Anda.
+
+---
+
+Dibuat dengan fokus pada pengelolaan tes psikologi DISC secara digital, efisien, dan mudah dipelajari.
